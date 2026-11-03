@@ -1,0 +1,199 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>세계 여행 판 스티커</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Gothic+A1:wght@400;600;800&display=swap">
+<style>
+/* Layout: airmail-envelope page — striped band on top, postcard-like sections, stamp-style labels */
+:root{
+  --bg:#f6f8fb; --paper:#ffffff; --ink:#1d2533; --muted:#5b6578;
+  --red:#d6383a; --blue:#2453a6; --line:#dde3ee; --soft:#eaf0fa;
+  --display:"Jua","Gothic A1",system-ui,sans-serif;
+  --body:"Gothic A1","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#121722; --paper:#1b2230; --ink:#e9edf5; --muted:#a2acbf;
+  --red:#ff6b6b; --blue:#7aa5ff; --line:#2c3547; --soft:#222b3c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#121722; --paper:#1b2230; --ink:#e9edf5; --muted:#a2acbf;
+  --red:#ff6b6b; --blue:#7aa5ff; --line:#2c3547; --soft:#222b3c; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65}
+.airmail{height:12px;background:repeating-linear-gradient(-45deg,var(--red) 0 16px,transparent 16px 26px,var(--blue) 26px 42px,transparent 42px 52px)}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px;display:grid;gap:44px}
+h1,h2{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.2}
+h1{font-size:clamp(2rem,6vw,3.2rem)}
+h2{font-size:1.6rem}
+p{margin:0}
+.hero{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.hero p{color:var(--muted);max-width:34em;margin-top:10px}
+.stamp{border:3px dashed var(--red);color:var(--red);border-radius:50%;width:132px;height:132px;display:grid;place-content:center;text-align:center;transform:rotate(-10deg);font-family:var(--display);line-height:1.15}
+.stamp b{font-size:2.3rem;font-weight:400;display:block}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{background:var(--soft);color:var(--blue);border-radius:999px;padding:4px 12px;font-size:.88rem;font-weight:600}
+.sec{display:grid;gap:16px}
+.sec>header{display:grid;gap:4px}
+.sec>header p{color:var(--muted)}
+.sheets{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.sheet{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:10px;display:grid;gap:8px}
+.sheet button.pick{all:unset;cursor:pointer;display:block;border-radius:3px}
+.sheet button.pick:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.sheet img{display:block;width:100%;aspect-ratio:148/210;object-fit:cover;background:#fff;border-radius:3px}
+.sheet figcaption{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;justify-content:space-between;font-size:.9rem;color:var(--muted)}
+.sheet figcaption b{color:var(--ink)}
+.dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.file{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:16px;display:grid;grid-template-columns:1fr auto;gap:6px 16px;align-items:center}
+.file.main{border:2px solid var(--blue)}
+.file h3{margin:0;font-size:1.02rem}
+.file p{color:var(--muted);font-size:.9rem;grid-column:1}
+.file .meta{font-size:.8rem;color:var(--muted)}
+.svgrow{display:flex;flex-wrap:wrap;gap:6px;grid-column:1/-1}
+.tag{display:inline-block;background:var(--blue);color:var(--paper);font-size:.72rem;font-weight:800;letter-spacing:.04em;border-radius:3px;padding:1px 6px;margin-left:6px;vertical-align:2px}
+.btn{grid-column:2;grid-row:1/span 3;font:inherit;font-weight:800;border:0;border-radius:6px;padding:10px 16px;background:var(--blue);color:var(--paper);cursor:pointer;white-space:nowrap}
+.btn:hover{filter:brightness(1.08)}
+.btn:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.btn[disabled]{opacity:.6;cursor:progress}
+.status{min-height:1.4em;font-size:.9rem;color:var(--muted)}
+.fallback a{color:var(--blue);font-weight:600}
+.ways{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.way{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:18px;display:grid;gap:8px}
+.way h3{font-family:var(--display);font-weight:400;font-size:1.3rem;margin:0}
+.way .eyebrow{font-size:.78rem;letter-spacing:.06em;font-weight:800;color:var(--red)}
+.way ol{margin:0;padding-left:1.2em;display:grid;gap:4px}
+.tips{background:var(--soft);border-radius:6px;padding:14px 18px;font-size:.92rem}
+.tips ul{margin:6px 0 0;padding-left:1.2em;display:grid;gap:2px}
+.share{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:18px}
+.qr{width:168px;height:168px;background:#fff;padding:8px;border-radius:6px;border:1px solid var(--line)}
+.qr img{width:100%;height:100%;image-rendering:pixelated;display:block}
+.link{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+.link code{background:var(--soft);padding:6px 10px;border-radius:4px;font-size:.85rem;word-break:break-all;min-width:0}
+.ghost{font:inherit;font-weight:700;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:6px;padding:6px 12px;cursor:pointer}
+dialog{border:0;padding:0;background:transparent;max-width:min(92vw,620px)}
+dialog::backdrop{background:rgba(10,14,22,.75)}
+dialog img{display:block;width:100%;height:auto;max-height:86vh;object-fit:contain;background:#fff;border-radius:4px}
+dialog form{text-align:right;margin-bottom:8px}
+footer{color:var(--muted);font-size:.85rem}
+@media (max-width:820px){.sheets{grid-template-columns:repeat(2,minmax(0,1fr))}.dl,.ways{grid-template-columns:1fr}}
+@media (max-width:520px){.hero{grid-template-columns:1fr}.stamp{display:none}.share{grid-template-columns:1fr;justify-items:start}
+  .file{grid-template-columns:1fr}.btn{grid-column:1;grid-row:auto;justify-self:start}}
+@media (prefers-reduced-motion:no-preference){.btn,.ghost{transition:filter .15s}}
+.sheet .pick:hover img{filter:brightness(.96)}.sheet .pick[disabled]{opacity:.6;cursor:progress}.hint{font-size:.8rem}
+.pngrow{display:flex;flex-wrap:wrap;gap:6px;grid-column:1/-1}.dl .wide{grid-column:1/-1}
+</style>
+</head><body>
+<div class="airmail" aria-hidden="true"></div>
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <h1>세계 여행 판 스티커</h1>
+      <p>여러 나라의 국기, 꽃, 랜드마크, 전통의상, 화폐, 동물과 음식을 그린 스티커 도안이에요. 그림을 누르면 바로 저장돼요. 스티커 용지에 뽑으면 스티커로, 일반 종이에 뽑으면 오려서 풀로 붙여 쓸 수 있어요.</p>
+      <div class="facts">
+        <span class="chip">스티커 144개</span>
+        <span class="chip">4장 · 장당 36개</span>
+        <span class="chip">A4 PNG 2480×3508</span>
+        <span class="chip">PDF · 칼선 SVG 포함</span>
+      </div>
+    </div>
+    <div class="stamp" aria-hidden="true"><span><b>144</b>STICKERS</span></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-preview">
+    <header><h2 id="h-preview">스티커 판</h2><p>그림을 누르면 그 장의 A4 PNG 파일이 저장돼요. 크게 보려면 크게 보기를 눌러 주세요.</p></header>
+    <div class="sheets">
+      <figure class="sheet"><button type="button" class="pick" data-file="sheet1" data-name="세계여행_스티커_A4_1장.png" aria-label="1장 PNG 받기"><img data-k="thumb1" alt="스티커 1장" loading="lazy"></button><figcaption><b>1장 · 36개</b><button class="ghost" type="button" data-zoom="thumb1">크게 보기</button></figcaption></figure>
+      <figure class="sheet"><button type="button" class="pick" data-file="sheet2" data-name="세계여행_스티커_A4_2장.png" aria-label="2장 PNG 받기"><img data-k="thumb2" alt="스티커 2장" loading="lazy"></button><figcaption><b>2장 · 36개</b><button class="ghost" type="button" data-zoom="thumb2">크게 보기</button></figcaption></figure>
+      <figure class="sheet"><button type="button" class="pick" data-file="sheet3" data-name="세계여행_스티커_A4_3장.png" aria-label="3장 PNG 받기"><img data-k="thumb3" alt="스티커 3장" loading="lazy"></button><figcaption><b>3장 · 36개</b><button class="ghost" type="button" data-zoom="thumb3">크게 보기</button></figcaption></figure>
+      <figure class="sheet"><button type="button" class="pick" data-file="sheet4" data-name="세계여행_스티커_A4_4장.png" aria-label="4장 PNG 받기"><img data-k="thumb4" alt="스티커 4장" loading="lazy"></button><figcaption><b>4장 · 36개</b><button class="ghost" type="button" data-zoom="thumb4">크게 보기</button></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-dl">
+    <header><h2 id="h-dl">파일 받기</h2><p>버튼을 누르면 저장 확인 창이 떠요. 집에서 뽑을 거라면 첫 번째 파일 하나면 충분해요.</p></header>
+    <div class="dl">
+      <div class="file main">
+        <h3>집 프린터용 A4<span class="tag">추천</span></h3>
+        <p>A4 한 장에 한 판씩, 총 4페이지</p>
+        <span class="meta">PDF · 10MB</span>
+        <button class="btn" type="button" data-file="allA4" data-name="세계여행_판스티커_전체_A4.pdf">받기</button>
+      </div>
+      <div class="file">
+        <h3>인쇄소 주문용 A5</h3>
+        <p>A5 4페이지, 칼선 없는 원본</p>
+        <span class="meta">PDF · 10MB</span>
+        <button class="btn" type="button" data-file="origA5" data-name="세계여행_스티커_원본_A5.pdf">받기</button>
+      </div>
+      <div class="file">
+        <h3>칼선 미리보기 A5</h3>
+        <p>어디를 따라 자르는지 표시한 파일</p>
+        <span class="meta">PDF · 10MB</span>
+        <button class="btn" type="button" data-file="cutA5" data-name="세계여행_스티커_칼선_A5.pdf">받기</button>
+      </div>
+      <div class="file wide">
+        <h3>칼선 파일 (SVG)</h3>
+        <p>판 스티커 인쇄소에 따로 내는 재단선, 장마다 1개</p>
+        <span class="pngrow"><button class="ghost" type="button" data-file="cutline1" data-name="세계여행_스티커_칼선_1장.svg">1장</button><button class="ghost" type="button" data-file="cutline2" data-name="세계여행_스티커_칼선_2장.svg">2장</button><button class="ghost" type="button" data-file="cutline3" data-name="세계여행_스티커_칼선_3장.svg">3장</button><button class="ghost" type="button" data-file="cutline4" data-name="세계여행_스티커_칼선_4장.svg">4장</button></span>
+      </div>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+    <p class="fallback" id="fallback" hidden>여기서는 저장 창을 열 수 없어요. 아래 링크를 새 탭에서 연 다음 저장해 주세요:
+      <a data-k="allA4" target="_blank" rel="noopener">A4 PDF</a> ·
+      <a data-k="sheet1" target="_blank" rel="noopener">PNG 1장</a> ·
+      <a data-k="sheet2" target="_blank" rel="noopener">2장</a> ·
+      <a data-k="sheet3" target="_blank" rel="noopener">3장</a> ·
+      <a data-k="sheet4" target="_blank" rel="noopener">4장</a> ·
+      <a data-k="origA5" target="_blank" rel="noopener">A5 원본</a> ·
+      <a data-k="cutA5" target="_blank" rel="noopener">칼선 미리보기</a></p>
+  </section>
+
+  <section class="sec" aria-labelledby="h-how">
+    <header><h2 id="h-how">이렇게 즐겨요</h2></header>
+    <div class="ways">
+      <div class="way"><span class="eyebrow">스티커 용지가 있다면</span><h3>뽑으면 바로 스티커</h3>
+        <ol><li>A4 스티커 용지를 프린터에 넣어요.</li><li>집 프린터용 PDF를 뽑아요.</li><li>흰 테두리를 따라 가위로 오려서 떼어 붙여요.</li></ol></div>
+      <div class="way"><span class="eyebrow">일반 종이라면</span><h3>오려서 풀로 붙이기</h3>
+        <ol><li>A4 일반 종이에 집 프린터용 PDF를 뽑아요.</li><li>흰 테두리를 따라 오려요.</li><li>뒷면에 풀을 발라 다이어리나 노트에 붙여요.</li></ol></div>
+    </div>
+    <div class="tips"><b>인쇄할 때</b>
+      <ul>
+        <li>배율은 <b>실제 크기(100%)</b>, 용지는 <b>A4 세로</b>로 맞춰 주세요.</li>
+        <li>인쇄 품질을 <b>고품질</b>로 하면 색이 더 선명해요.</li>
+        <li>판 스티커로 주문할 땐 A5 원본 PDF와 칼선 SVG를 함께 보내면 돼요.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>개인적인 꾸미기 용도로 만든 도안이에요. 국기와 화폐 그림은 실제와 다를 수 있어요.</footer>
+</main>
+
+<dialog id="zoom"><form method="dialog"><button class="ghost" type="submit">닫기</button></form><img id="zoomimg" alt="스티커 크게 보기"></dialog>
+
+<script>
+(function(){
+  const F={thumb1:"/_blob/e1c3c16080234592423cc0461bae303b",thumb2:"/_blob/b25b86a28bd47276f9135257d5faf323",thumb3:"/_blob/c8a755077348f44f7536215bdd21a2d3",thumb4:"/_blob/9bfb1024f6f0ae9893c6d222e385ac23",sheet1:"/_blob/7185d55c660eddf079054f58d83fd4f9",sheet2:"/_blob/5a3d0ea75decb5358a039bf6e5dcc63b",sheet3:"/_blob/b1dd571569749904b32402b9c7fce08a",sheet4:"/_blob/99db82a88a6a815602da20f0f7732c62",allA4:"/_blob/fe84d329017eaec2f04cc75843b6ed84",origA5:"/_blob/1f3e34d08d176a81942ef8993d8f92ac",cutA5:"/_blob/3fc2ead4f6f1cdaf88a7b3c5459f2ef5",cutline1:"/_blob/4bdbc81753e025cd4e5bf223e065d27c",cutline2:"/_blob/301045098a53f92272446ea53227d004",cutline3:"/_blob/72bcdccdbe3912d94e5b7cc12cee2471",cutline4:"/_blob/017c9b3753c798715ffddd9cdd06a747"};
+  const st=document.getElementById('status'), fb=document.getElementById('fallback');
+  document.querySelectorAll('img[data-k]').forEach(i=>{i.src=F[i.dataset.k];});
+  document.querySelectorAll('a[data-k]').forEach(a=>{a.href=F[a.dataset.k];});
+  let p=null;
+  const getDl=()=>p||(p=(window.claude&&window.claude.use)?window.claude.use('downloads').catch(()=>null):Promise.resolve(null));
+  getDl().then(d=>{ if(!d) fb.hidden=false; });
+  document.querySelectorAll('[data-file]').forEach(b=>b.addEventListener('click',async()=>{
+    const dl=await getDl();
+    if(!dl){ fb.hidden=false; st.textContent='저장 창을 열 수 없어서 아래 링크를 열어 두었어요.'; return; }
+    b.disabled=true; st.textContent='준비 중…';
+    try{
+      const r=await fetch(F[b.dataset.file]);
+      if(!r.ok) throw {code:'fetch'};
+      const blob=await r.blob();
+      await dl.save({filename:b.dataset.name,data:blob});
+      st.textContent=b.dataset.name+' 저장을 시작했어요.';
+    }catch(e){
+      const c=e&&e.code;
+      if(c==='declined') st.textContent='';
+      else if(c==='rate_limited') st.textContent='저장 창이 이미 열려 있어요. 잠시 뒤 다시 눌러 주세요.';
+      else if(c==='fetch') st.textContent='파일을 불러오지 못했어요. 새로고침한 뒤 다시 눌러 주세요.';
+      else { fb.hidden=false; st.textContent='여기서는 저장 창을 열 수 없어요. 아래 링크로 받아 주세요.'; }
+    }finally{ b.disabled=false; }
+  }));
+  const dlg=document.getElementById('zoom'), zi=document.getElementById('zoomimg');
+  document.querySelectorAll('[data-zoom]').forEach(b=>b.addEventListener('click',()=>{ zi.src=F[b.dataset.zoom]; if(dlg.showModal) dlg.showModal(); }));
+  dlg.addEventListener('click',e=>{ if(e.target===dlg) dlg.close(); });
+})();
+</script>
+</body></html>
